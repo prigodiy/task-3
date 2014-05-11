@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planes>
+    <plane id="p_0">
+        <model>Sukhoi Su-27</model>
+        <origin>Soviet Union</origin>
+        <chars>
+            <type>Fighter</type>
+            <crew>One</crew>
+            <ammo status="true">
+                <rocket>5</rocket>
+                <radar>true</radar>
+            </ammo>
+        </chars>
+        <parameters>
+            <length>22</length>
+            <width>15</width>
+            <height>6</height>
+        </parameters>
+        <price>50000000</price>
+    </plane>
+    <plane id="p_1">
+        <model>Cessna 172 Skyhawk</model>
+        <origin>USA</origin>
+        <chars>
+            <type>Recon</type>
+            <crew>Two</crew>
+            <ammo status="false"/>
+        </chars>
+        <parameters>
+            <length>8</length>
+            <width>11</width>
+            <height>3</height>
+        </parameters>
+        <price>500000</price>
+    </plane>
+    <plane id="p_2">
+        <model>Messerschmitt Bf.109</model>
+        <origin>Germany</origin>
+        <chars>
+            <type>Interceptor</type>
+            <crew>One</crew>
+            <ammo status="true">
+                <rocket>0</rocket>
+                <radar>false</radar>
+            </ammo>
+        </chars>
+        <parameters>
+            <length>9</length>
+            <width>10</width>
+            <height>3</height>
+        </parameters>
+        <price>100000</price>
+    </plane>
+</planes>
