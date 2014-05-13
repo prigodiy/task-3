@@ -14,18 +14,11 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-public class PlanesDOMParser {
+public class PlanesDOMParser extends AbstractPlanesParser {
 
-    private List<Plane> planes = new ArrayList<>();
-
-    public List<Plane> getPlanes() {
-        return planes;
-    }
-
-    public void parseDocument(String xmlPath) {
+    public List<Plane> parseDocument(String xmlPath) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -33,8 +26,10 @@ public class PlanesDOMParser {
             Element root = document.getDocumentElement();
             NodeList nodeList = root.getChildNodes();
             parsePlanesList(nodeList);
+            return planes;
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
+            return null;
         }
     }
 
@@ -109,7 +104,6 @@ public class PlanesDOMParser {
                         parameters.setHeight(Integer.valueOf(heightElement.getFirstChild().getNodeValue()));
                     }
                 }
-
 
                 planes.add(plane);
             }

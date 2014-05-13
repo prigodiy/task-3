@@ -3,7 +3,7 @@ package epam.students.prihodii.xmlTask.entity;
 import epam.students.prihodii.xmlTask.entity.types.Chars;
 import epam.students.prihodii.xmlTask.entity.types.Parameters;
 
-public class Plane {
+public class Plane implements Comparable<Plane> {
 
     private String id;
     private String model;
@@ -58,6 +58,11 @@ public class Plane {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public int compareTo(Plane o) {
+        return model.compareTo(o.model);
     }
 
     @Override
